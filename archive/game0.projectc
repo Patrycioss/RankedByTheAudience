@@ -84,8 +84,8 @@ max_resources = 1024
 repeat_delay = 0.5
 repeat_interval = 0.2
 gamepads = /builtins/input/default.gamepadsc
-game_binding = /input/game.input_bindingc
-use_accelerometer = 0
+game_binding = /builtins/input/all.input_bindingc
+use_accelerometer = 1
 
 [sprite]
 max_count = 128
@@ -181,7 +181,7 @@ http_thread_count = 4
 http_cache_enabled = 1
 
 [library]
-include_dirs = https://github.com/baochungit/defold-textinput/archive/refs/tags/1.1.3.zip
+include_dirs = 
 
 [script]
 shared_state = 1
@@ -206,4 +206,5 @@ max_tile_count = 2048
 [engine]
 run_while_iconified = 0
 fixed_update_frequency = 60
+max_time_step = 0.5
 
