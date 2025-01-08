@@ -171,12 +171,38 @@
 			<canvas id="canvas" class="canvas-app-canvas" tabindex="1" width="360" height="640"></canvas>
 		</div>
 		<div class="buttons-background">
+
 			<div class="button" onclick="Module.toggleFullscreen();">Fullscreen</div>
+
+
 			<div class="link">Made with <a href="https://defold.com/" target="_blank">Defold</a></div>
+
 		</div>
 	</div>
 	<!-- -->
-	<script id='engine-loader' type='text/javascript' src="dmloader.js"></script>
+	<script id='engine-loader' type='text/javascript' src="dmloader.js">
+
+
+	</script>
+
+	<script>
+		const promise = new Promise((resolve, reject) => {
+			setTimeout(() => {
+				const input = document.getElementById('LibraryTextInput-0');
+				input.addEventListener("focus", function(){
+					const myPromise = new Promise((resolve, reject) => {
+					  setTimeout(() => {
+						const length = input.value.length;
+						input.setSelectionRange(length, length);
+						resolve();
+					  }, 100);
+					});
+				});
+				resolve();
+			}, 2000);
+		});
+		
+	</script>
 
 	<script id='engine-start' type='text/javascript'>
 		var runningFromFileWarning = document.getElementById("running-from-file-warning");
@@ -187,17 +213,6 @@
 			EngineLoader.load("canvas", "Prototype2");
 			runningFromFileWarning.parentNode.removeChild(runningFromFileWarning);
 		}
-		const input = document.getElementById('LibraryTextInput-0');
-    input.addEventListener("focus", function(){
-        const myPromise = new Promise((resolve, reject) => {
-          setTimeout(() => {
-            const length = input.value.length;
-            // Set the cursor to the end
-            input.setSelectionRange(length, length);
-            resolve();
-          }, 10);
-        });
-    });
 	</script>
 </body>
 </html>
