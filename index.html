@@ -176,23 +176,7 @@
 		</div>
 	</div>
 	<!-- -->
-	<script id='engine-loader' type='text/javascript' src="dmloader.js">
-
-
-	</script>
-
-	<script>
-		const input = document.getElementById('LibraryTextInput-0');
-    input.addEventListener("focus", function(){
-        const myPromise = new Promise((resolve, reject) => {
-          setTimeout(() => {
-            const length = input.value.length;
-            // Set the cursor to the end
-            input.setSelectionRange(length, length);
-            resolve();
-          }, 100);
-        });
-	</script>
+	<script id='engine-loader' type='text/javascript' src="dmloader.js"></script>
 
 	<script id='engine-start' type='text/javascript'>
 		var runningFromFileWarning = document.getElementById("running-from-file-warning");
@@ -203,6 +187,16 @@
 			EngineLoader.load("canvas", "Prototype2");
 			runningFromFileWarning.parentNode.removeChild(runningFromFileWarning);
 		}
+		const input = document.getElementById('LibraryTextInput-0');
+    input.addEventListener("focus", function(){
+        const myPromise = new Promise((resolve, reject) => {
+          setTimeout(() => {
+            const length = input.value.length;
+            // Set the cursor to the end
+            input.setSelectionRange(length, length);
+            resolve();
+          }, 10);
+        });
     });
 	</script>
 </body>
